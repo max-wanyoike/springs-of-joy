@@ -14,8 +14,6 @@ export default function GalleryPage() {
   { src: "/garden-area.jpg",           alt: "Outdoor garden with trees and fenced yard",                       title: "Garden Area" },
   { src: "/outdoor-patio.jpg",         alt: "Outdoor patio with canopy and seating",                           title: "Outdoor Patio" },
 ];
-,
-  ]
 
   return (
     <div className="min-h-screen bg-background">
