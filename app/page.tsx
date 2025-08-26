@@ -155,7 +155,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="border-t border-border mt-8 pt-8 text-center text-muted-foreground">
-            <p>&copy; 2024 Springs of Joy Adult Family Home. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Springs of Joy Adult Family Home. All rights reserved.</p>
           </div>
         </div>
       </footer>
