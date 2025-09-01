@@ -76,10 +76,10 @@ export default function ServicesPage() {
               },
               {
                 icon: <MapPin className="h-12 w-12 text-primary" />,
-                title: "Transportation Services",
+                title: "Housekeeping Services",
                 description:
-                  "Safe, reliable transportation to medical appointments, shopping trips, and community activities. We ensure your loved one stays connected to their healthcare providers and community.",
-                features: ["Medical appointments", "Shopping assistance", "Community outings", "Safe transportation"],
+                  "Comprehensive housekeeping support to maintain a clean, safe, and comfortable living environment. Our staff ensures residents’ surroundings are well cared for so they can enjoy peace of mind.",
+                features: ["Regular cleaning of living areas and bedrooms", "Changing and laundering bed sheetse", "Washing and folding clothes", "Assistance with organizing personal spaces", "Tidying up after meals and daily activities"],
               },
               {
                 icon: <Star className="h-12 w-12 text-primary" />,
