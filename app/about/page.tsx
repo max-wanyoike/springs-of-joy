@@ -204,8 +204,7 @@ export default function AboutPage() {
             <div>
               <h3 className="font-semibold text-foreground mb-4">Contact Info</h3>
               <div className="space-y-2 text-muted-foreground">
-                <p>Robert — Owner & Licensee</p>
-                <p>Lucy — RN Delegator & 15 years homecare experience</p>
+                <p>15155 SW Kilchis Ct, Beaverton, OR 97007</p>
                 <p>springsofjoycarehome@gmail.com</p>
                 <p>(971) 441-3058</p>
               </div>
