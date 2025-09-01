@@ -70,13 +70,6 @@ export default function AboutPage() {
                 <Link href="/contact">Learn More About Our Care</Link>
               </Button>
             </div>
-            <div>
-              <img
-                src="/new-image-url.png"
-                alt="Compassionate care at Springs of Joy"
-                className="rounded-lg shadow-lg"
-              />
-            </div>
           </div>
         </div>
       </section>
@@ -93,13 +86,6 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <Card className="text-center">
               <CardHeader>
-                <div className="mx-auto mb-4">
-                  <img
-                    src="/new-robert-image-url.png"
-                    alt="Robert Kibui"
-                    className="rounded-full w-32 h-32 mx-auto object-cover"
-                  />
-                </div>
                 <CardTitle className="text-2xl">Robert Kibui</CardTitle>
                 <CardDescription className="text-lg">Owner & Administrator</CardDescription>
               </CardHeader>
@@ -113,13 +99,6 @@ export default function AboutPage() {
             </Card>
             <Card className="text-center">
               <CardHeader>
-                <div className="mx-auto mb-4">
-                  <img
-                    src="/new-lucy-image-url.png"
-                    alt="Lucy Wanyoike"
-                    className="rounded-full w-32 h-32 mx-auto object-cover"
-                  />
-                </div>
                 <CardTitle className="text-2xl">Lucy Wanyoike</CardTitle>
                 <CardDescription className="text-lg">Primary Care Provider</CardDescription>
               </CardHeader>
@@ -224,19 +203,11 @@ export default function AboutPage() {
             </div>
             <div>
               <h3 className="font-semibold text-foreground mb-4">Contact Info</h3>
-              <div className="space-y-2">
-                <div className="flex items-center space-x-2 text-muted-foreground">
-                  <MapPin className="h-4 w-4" />
-                  <span>15155 SW Kilchis Ct, Beaverton, OR 97007</span>
-                </div>
-                <div className="flex items-center space-x-2 text-muted-foreground">
-                  <Phone className="h-4 w-4" />
-                  <span>(971) 441-3058</span>
-                </div>
-                <div className="flex items-center space-x-2 text-muted-foreground">
-                  <Mail className="h-4 w-4" />
-                  <span>springsofjoycarehome@gmail.com</span>
-                </div>
+              <div className="space-y-2 text-muted-foreground">
+                <p>Robert — Owner & Licensee</p>
+                <p>Lucy — RN Delegator & 15 years homecare experience</p>
+                <p>springsofjoycarehome@gmail.com</p>
+                <p>(971) 441-3058</p>
               </div>
             </div>
           </div>
