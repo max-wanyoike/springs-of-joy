@@ -3,19 +3,20 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { HomeIcon, Phone, Menu } from "lucide-react"
+import { Phone, Menu } from "lucide-react"
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center justify-between">
-        {/* Left: brand */}
-        <div className="flex items-center gap-2">
-          <HomeIcon className="h-7 w-7 text-primary" />
-          <Link href="/" className="text-lg font-semibold text-foreground">
-            Springs of Joy
-          </Link>
-        </div>
+    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 h-20">
+      <div className="container flex h-20 items-center justify-between">
+        {/* Left: logo only */}
+        <Link href="/" className="flex items-center">
+          <img
+            src="/soj3logo.png"
+            alt="Springs of Joy Logo"
+            className="h-14 w-auto ml-4" // adjust size + spacing
+          />
+        </Link>
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-6">
@@ -56,3 +57,4 @@ export default function Header() {
     </header>
   )
 }
+
