@@ -171,12 +171,12 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Footer */}
+           {/* Footer */}
       <footer className="bg-card py-12 px-4">
         <div className="container mx-auto">
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 text-center md:text-left">
             <div>
-              <div className="flex items-center space-x-2 mb-4">
+              <div className="flex items-center justify-center md:justify-start space-x-2 mb-4">
                 <Heart className="h-6 w-6 text-primary" />
                 <span className="text-lg font-bold text-foreground">Springs of Joy</span>
               </div>
