@@ -87,7 +87,7 @@ export default function AboutPage() {
             <Card className="text-center">
               <CardHeader>
                 <CardTitle className="text-2xl">Robert Kibui</CardTitle>
-                <CardDescription className="text-lg">Owner & Administrator</CardDescription>
+                <CardDescription className="text-lg">Owner & Licensee</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
@@ -100,7 +100,7 @@ export default function AboutPage() {
             <Card className="text-center">
               <CardHeader>
                 <CardTitle className="text-2xl">Lucy Wanyoike</CardTitle>
-                <CardDescription className="text-lg">Primary Care Provider</CardDescription>
+                <CardDescription className="text-lg">RN Delegator</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
