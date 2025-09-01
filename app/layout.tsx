@@ -5,11 +5,11 @@ import { GeistMono } from "geist/font/mono"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "Springs of Joy Adult Family Home | Compassionate Senior Care in Beaverton, Oregon",
+  title: "Springs of Joy Care Home | Compassionate Senior Care in Beaverton, Oregon",
   description:
     "Springs of Joy provides dignified, compassionate senior care and assisted living in a warm, home-like environment in Beaverton, Oregon. 24/7 support, personalized care, and activities.",
   keywords:
-    "Adult Family Home Beaverton Oregon, Assisted Living Beaverton, Senior Care Beaverton, Springs of Joy Beaverton",
+    "Care Home Beaverton Oregon, Assisted Living Beaverton, Senior Care Beaverton, Springs of Joy Beaverton",
   generator: "v0.app",
 }
 
