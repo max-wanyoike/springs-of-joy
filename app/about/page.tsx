@@ -1,13 +1,13 @@
-// app/about/page.tsx
+// app/page.tsx
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Heart, Users, Award, Clock, Phone, Mail, MapPin } from "lucide-react"
-import Link from "next/link"
+import { Heart, Users, Shield, Clock, Star, Utensils, Phone, Mail } from "lucide-react"
 
-export default function AboutPage() {
+export default function HomePage() {
   return (
     <div className="min-h-screen bg-background">
-      {/* Header (logo image, taller height, no text) */}
+      {/* Header with logo (no text) */}
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 h-20">
         <div className="container flex h-20 items-center justify-between">
           <Link href="/" className="flex items-center">
@@ -18,145 +18,95 @@ export default function AboutPage() {
             />
           </Link>
 
-          <nav className="hidden md:flex items-center space-x-6">
-            <Link href="/" className="text-foreground hover:text-primary transition-colors">
-              Home
-            </Link>
-            <Link href="/about" className="text-primary font-medium">
-              About Us
-            </Link>
-            <Link href="/services" className="text-foreground hover:text-primary transition-colors">
-              Services
-            </Link>
-            <Link href="/gallery" className="text-foreground hover:text-primary transition-colors">
-              Gallery
-            </Link>
-            <Link href="/contact" className="text-foreground hover:text-primary transition-colors">
-              Contact
-            </Link>
+          {/* Desktop nav */}
+          <nav className="hidden md:flex items-center gap-6">
+            <Link href="/" className="text-foreground hover:text-primary transition-colors">Home</Link>
+            <Link href="/about" className="text-foreground hover:text-primary transition-colors">About Us</Link>
+            <Link href="/services" className="text-foreground hover:text-primary transition-colors">Services</Link>
+            <Link href="/gallery" className="text-foreground hover:text-primary transition-colors">Gallery</Link>
+            <Link href="/contact" className="text-foreground hover:text-primary transition-colors">Contact</Link>
           </nav>
 
+          {/* Desktop CTA */}
           <Button asChild className="hidden md:inline-flex">
             <Link href="/contact">Schedule a Tour</Link>
           </Button>
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="py-20 px-4 bg-gradient-to-b from-card to-background">
+      {/* Hero Section (unchanged image) */}
+      <section className="relative py-20 px-4 bg-gradient-to-b from-card to-background">
         <div className="container mx-auto text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
-            About <span className="text-primary">Springs of Joy</span>
+            Compassionate Care in a{" "}
+            <span className="text-primary">Home-Like Setting</span>
           </h1>
-          <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-            Our mission is providing compassionate and personalized care so every resident feels at home.
+          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+            Springs of Joy Care Home provides dignity, comfort, and support for your loved ones in Beaverton, Oregon.
           </p>
-        </div>
-      </section>
-
-      {/* Mission & Philosophy */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">Our Mission</h2>
-              <p className="text-lg text-muted-foreground mb-6">
-                At Springs of Joy, we believe that every senior deserves to live with dignity, comfort, and joy. Our
-                mission is to provide compassionate, personalized care in a warm, home-like environment where residents
-                feel valued, respected, and truly at home.
-              </p>
-              <p className="text-lg text-muted-foreground mb-8">
-                We understand that choosing care for a loved one is one of life's most difficult decisions. That's why
-                we're committed to creating a place where families can have peace of mind, knowing their loved ones are
-                receiving the highest quality care with genuine compassion.
-              </p>
-              <Button asChild>
-                <Link href="/contact">Learn More About Our Care</Link>
-              </Button>
-            </div>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" asChild>
+              <Link href="/contact">Schedule a Tour</Link>
+            </Button>
+            <Button size="lg" variant="outline" asChild>
+              <a href="tel:+19714413058">
+                <Phone className="mr-2 h-4 w-4" />
+                Call Us Today
+              </a>
+            </Button>
           </div>
         </div>
       </section>
 
-      {/* Leadership Team */}
-      <section className="py-20 px-4 bg-card">
-        <div className="container mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Meet Our Leadership</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Our experienced team is dedicated to providing exceptional care with heart and professionalism.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <Card className="text-center">
-              <CardHeader>
-                <CardTitle className="text-2xl">Robert Kibui</CardTitle>
-                <CardDescription className="text-lg">Owner & Licensee</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  Robert brings years of experience in senior care and a deep commitment to creating a nurturing
-                  environment where residents thrive. His vision for Springs of Joy is rooted in treating every resident
-                  like family.
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="text-center">
-              <CardHeader>
-                <CardTitle className="text-2xl">Lucy Wanyoike</CardTitle>
-                <CardDescription className="text-lg">RN Delegator</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  Lucy is our dedicated primary care provider with extensive experience in senior care. Her
-                  compassionate approach and attention to detail ensure that each resident receives personalized care
-                  tailored to their unique needs.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Our Values */}
+      {/* Services Overview */}
       <section className="py-20 px-4">
         <div className="container mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Our Core Values</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Our Services</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              These values guide everything we do at Springs of Joy.
+              Comprehensive care tailored to each resident's unique needs and preferences.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
-                icon: <Heart className="h-8 w-8 text-primary" />,
-                title: "Compassion",
-                description: "We treat every resident with kindness, empathy, and genuine care.",
-              },
-              {
                 icon: <Users className="h-8 w-8 text-primary" />,
-                title: "Dignity",
-                description: "We honor each person's individuality and respect their life experiences.",
+                title: "Assisted Living",
+                description: "Daily living assistance with dignity and independence.",
               },
               {
-                icon: <Award className="h-8 w-8 text-primary" />,
-                title: "Excellence",
-                description: "We strive for the highest standards in all aspects of care and service.",
+                icon: <Shield className="h-8 w-8 text-primary" />,
+                title: "Medication Management",
+                description: "Safe, reliable administration of medications.",
+              },
+              {
+                icon: <Utensils className="h-8 w-8 text-primary" />,
+                title: "Nutritious Meals",
+                description: "Healthy, home-cooked meals served daily.",
               },
               {
                 icon: <Clock className="h-8 w-8 text-primary" />,
-                title: "Reliability",
-                description: "Families can count on us for consistent, dependable care around the clock.",
+                title: "24/7 Support",
+                description: "Compassionate staff available around the clock.",
               },
-            ].map((value, index) => (
+              {
+                icon: <Heart className="h-8 w-8 text-primary" />,
+                title: "Housekeeping",
+                description: "Laundry, cleaning, and room upkeep made simple.",
+              },
+              {
+                icon: <Star className="h-8 w-8 text-primary" />,
+                title: "Daily Activities",
+                description: "Social, fun, and engaging experiences every day.",
+              },
+            ].map((service, index) => (
               <Card key={index} className="text-center hover:shadow-lg transition-shadow">
                 <CardHeader>
-                  <div className="mx-auto mb-4">{value.icon}</div>
-                  <CardTitle>{value.title}</CardTitle>
+                  <div className="mx-auto mb-4">{service.icon}</div>
+                  <CardTitle>{service.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription>{value.description}</CardDescription>
+                  <CardDescription>{service.description}</CardDescription>
                 </CardContent>
               </Card>
             ))}
@@ -164,18 +114,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 px-4 bg-primary text-primary-foreground">
-        <div className="container mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Experience the Springs of Joy Difference</h2>
-          <p className="text-xl mb-8 opacity-90">Schedule a tour and meet our caring team in person.</p>
-          <Button size="lg" variant="secondary" asChild>
-            <Link href="/contact">Schedule Your Visit</Link>
-          </Button>
-        </div>
-      </section>
-
-      {/* Footer with logo */}
+      {/* Footer */}
       <footer className="bg-card py-12 px-4">
         <div className="container mx-auto">
           <div className="grid md:grid-cols-3 gap-8">
@@ -194,27 +133,15 @@ export default function AboutPage() {
             <div>
               <h3 className="font-semibold text-foreground mb-4">Quick Links</h3>
               <div className="space-y-2">
-                <Link href="/about" className="block text-muted-foreground hover:text-primary transition-colors">
-                  About Us
-                </Link>
-                <Link href="/services" className="block text-muted-foreground hover:text-primary transition-colors">
-                  Services
-                </Link>
-                <Link href="/gallery" className="block text-muted-foreground hover:text-primary transition-colors">
-                  Gallery
-                </Link>
-                <Link href="/contact" className="block text-muted-foreground hover:text-primary transition-colors">
-                  Contact
-                </Link>
+                <Link href="/about" className="block text-muted-foreground hover:text-primary transition-colors">About Us</Link>
+                <Link href="/services" className="block text-muted-foreground hover:text-primary transition-colors">Services</Link>
+                <Link href="/gallery" className="block text-muted-foreground hover:text-primary transition-colors">Gallery</Link>
+                <Link href="/contact" className="block text-muted-foreground hover:text-primary transition-colors">Contact</Link>
               </div>
             </div>
             <div>
               <h3 className="font-semibold text-foreground mb-4">Contact Info</h3>
               <div className="space-y-2">
-                <div className="flex items-center space-x-2 text-muted-foreground">
-                  <MapPin className="h-4 w-4" />
-                  <span>15155 SW Kilchis Ct, Beaverton, OR 97007</span>
-                </div>
                 <div className="flex items-center space-x-2 text-muted-foreground">
                   <Phone className="h-4 w-4" />
                   <span>(971) 441-3058</span>
