@@ -1,20 +1,23 @@
+// app/about/page.tsx
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { HomeIcon,Heart, Users, Award, Clock, Phone, Mail, MapPin } from "lucide-react"
+import { Heart, Users, Award, Clock, Phone, Mail, MapPin } from "lucide-react"
 import Link from "next/link"
 
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex h-16 items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <HomeIcon className="h-8 w-8 text-primary" />
-            <Link href="/" className="text-xl font-bold text-foreground">
-              Springs of Joy
-            </Link>
-          </div>
+      {/* Header (logo image, taller height, no text) */}
+      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 h-20">
+        <div className="container flex h-20 items-center justify-between">
+          <Link href="/" className="flex items-center">
+            <img
+              src="/sojfinalelogo.png"
+              alt="Springs of Joy Logo"
+              className="h-14 w-auto ml-4"
+            />
+          </Link>
+
           <nav className="hidden md:flex items-center space-x-6">
             <Link href="/" className="text-foreground hover:text-primary transition-colors">
               Home
@@ -32,6 +35,7 @@ export default function AboutPage() {
               Contact
             </Link>
           </nav>
+
           <Button asChild className="hidden md:inline-flex">
             <Link href="/contact">Schedule a Tour</Link>
           </Button>
@@ -171,14 +175,17 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Footer */}
+      {/* Footer with logo */}
       <footer className="bg-card py-12 px-4">
         <div className="container mx-auto">
           <div className="grid md:grid-cols-3 gap-8">
             <div>
-              <div className="flex items-center space-x-2 mb-4">
-                <Heart className="h-6 w-6 text-primary" />
-                <span className="text-lg font-bold text-foreground">Springs of Joy</span>
+              <div className="flex items-center mb-4">
+                <img
+                  src="/sojfinalelogo.png"
+                  alt="Springs of Joy Logo"
+                  className="h-12 w-auto"
+                />
               </div>
               <p className="text-muted-foreground mb-4">
                 Providing compassionate senior care in a warm, home-like environment in Beaverton, Oregon.
