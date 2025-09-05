@@ -1,23 +1,83 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
-import { HomeIcon,Heart, Phone, Mail, MapPin } from "lucide-react"
+import { HomeIcon, Heart, Phone, Mail, MapPin, X, ChevronLeft, ChevronRight } from "lucide-react"
 import Link from "next/link"
+import { useState, useEffect } from "react"
 
 export default function GalleryPage() {
+  const [selectedImage, setSelectedImage] = useState<number | null>(null)
+  
   const galleryImages = [
-  { src: "/living-room.jpg",           alt: "Cozy living room with seating and natural light",                 title: "Living Room" },
-  { src: "/dining-area.jpg",           alt: "Dining area with table set for residents",                        title: "Dining Area" },
-  { src: "/private-bedroom-1.jpg",     alt: "Private resident bedroom with bed and window",                    title: "Private Bedroom" },
-  { src: "/open-room.jpg",     alt: "Open room",                    title: "Open Room" },
-  { src: "/private-bedroom-2.jpg",     alt: "Additional private resident bedroom with natural lighting",       title: "Private Bedroom Two" },
-  { src: "/accessible-bathroom-1.jpg", alt: "Accessible bathroom with roll-in shower and safety rails",        title: "Accessible Bathroom" },
-  { src: "/accessible-bathroom-2.jpg", alt: "Additional accessible bathroom with toilet and safety rails",     title: "Accessible Bathroom Two" },
-  { src: "/garden-area.jpg",           alt: "Outdoor garden with trees and fenced yard",                       title: "Garden Area" },
-  { src: "/outdoor-patio.jpg",         alt: "Outdoor patio with canopy and seating",                           title: "Outdoor Patio" },
-];
-const burgundy = "#7A1F2B"
+    { src: "/living-room.jpg", alt: "Cozy living room with seating and natural light", title: "Living Room" },
+    { src: "/dining-area.jpg", alt: "Dining area with table set for residents", title: "Dining Area" },
+    { src: "/private-bedroom-1.jpg", alt: "Private resident bedroom with bed and window", title: "Private Bedroom" },
+    { src: "/open-room.jpg", alt: "Open room", title: "Open Room" },
+    { src: "/private-bedroom-2.jpg", alt: "Additional private resident bedroom with natural lighting", title: "Private Bedroom Two" },
+    { src: "/accessible-bathroom-1.jpg", alt: "Accessible bathroom with roll-in shower and safety rails", title: "Accessible Bathroom" },
+    { src: "/accessible-bathroom-2.jpg", alt: "Additional accessible bathroom with toilet and safety rails", title: "Accessible Bathroom Two" },
+    { src: "/garden-area.jpg", alt: "Outdoor garden with trees and fenced yard", title: "Garden Area" },
+    { src: "/outdoor-patio.jpg", alt: "Outdoor patio with canopy and seating", title: "Outdoor Patio" },
+  ]
+
+  const burgundy = "#7A1F2B"
+
+  // Handle keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (selectedImage === null) return
+
+      if (e.key === 'Escape') {
+        setSelectedImage(null)
+      } else if (e.key === 'ArrowRight') {
+        setSelectedImage((prev) => 
+          prev === null ? 0 : (prev + 1) % galleryImages.length
+        )
+      } else if (e.key === 'ArrowLeft') {
+        setSelectedImage((prev) => 
+          prev === null ? 0 : prev === 0 ? galleryImages.length - 1 : prev - 1
+        )
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [selectedImage, galleryImages.length])
+
+  // Prevent background scrolling when lightbox is open
+  useEffect(() => {
+    if (selectedImage !== null) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+    
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
+  }, [selectedImage])
+
+  const openLightbox = (index: number) => {
+    setSelectedImage(index)
+  }
+
+  const closeLightbox = () => {
+    setSelectedImage(null)
+  }
+
+  const nextImage = () => {
+    setSelectedImage((prev) => 
+      prev === null ? 0 : (prev + 1) % galleryImages.length
+    )
+  }
+
+  const prevImage = () => {
+    setSelectedImage((prev) => 
+      prev === null ? 0 : prev === 0 ? galleryImages.length - 1 : prev - 1
+    )
+  }
 
   return (
-    
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="py-20 px-4 bg-gradient-to-b from-card to-background">
@@ -38,9 +98,9 @@ const burgundy = "#7A1F2B"
             {galleryImages.map((image, index) => (
               <div
                 key={index}
-                className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow"
+                className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow cursor-pointer"
+                onClick={() => openLightbox(index)}
               >
-                {/* TO REPLACE: Upload your images and change the src paths in the galleryImages array above */}
                 <img
                   src={image.src || "/placeholder.svg"}
                   alt={image.alt}
@@ -49,6 +109,7 @@ const burgundy = "#7A1F2B"
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                   <div className="p-4 text-white">
                     <h3 className="text-lg font-semibold">{image.title}</h3>
+                    <p className="text-sm opacity-90">Click to view larger</p>
                   </div>
                 </div>
               </div>
@@ -56,6 +117,60 @@ const burgundy = "#7A1F2B"
           </div>
         </div>
       </section>
+
+      {/* Lightbox Modal */}
+      {selectedImage !== null && (
+        <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4">
+          {/* Close button */}
+          <button
+            onClick={closeLightbox}
+            className="absolute top-4 right-4 z-60 p-2 bg-white/10 hover:bg-white/20 rounded-full transition-colors"
+          >
+            <X className="w-6 h-6 text-white" />
+          </button>
+
+          {/* Previous button */}
+          <button
+            onClick={prevImage}
+            className="absolute left-4 top-1/2 transform -translate-y-1/2 z-60 p-2 bg-white/10 hover:bg-white/20 rounded-full transition-colors"
+          >
+            <ChevronLeft className="w-8 h-8 text-white" />
+          </button>
+
+          {/* Next button */}
+          <button
+            onClick={nextImage}
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 z-60 p-2 bg-white/10 hover:bg-white/20 rounded-full transition-colors"
+          >
+            <ChevronRight className="w-8 h-8 text-white" />
+          </button>
+
+          {/* Main image */}
+          <div className="relative max-w-5xl max-h-[90vh] w-full h-full flex items-center justify-center">
+            <img
+              src={galleryImages[selectedImage].src || "/placeholder.svg"}
+              alt={galleryImages[selectedImage].alt}
+              className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
+            />
+            
+            {/* Image info */}
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/50 text-white px-4 py-2 rounded-lg backdrop-blur-sm">
+              <h3 className="text-lg font-semibold text-center">
+                {galleryImages[selectedImage].title}
+              </h3>
+              <p className="text-sm text-center opacity-90">
+                {selectedImage + 1} of {galleryImages.length}
+              </p>
+            </div>
+          </div>
+
+          {/* Instructions */}
+          <div className="absolute bottom-4 right-4 bg-black/50 text-white px-3 py-2 rounded-lg backdrop-blur-sm text-sm">
+            <p>Use ← → keys or click arrows to navigate</p>
+            <p>Press ESC to close</p>
+          </div>
+        </div>
+      )}
 
       {/* Virtual Tour CTA */}
       <section className="py-20 px-4 bg-white">
