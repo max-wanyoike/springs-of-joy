@@ -7,30 +7,6 @@ import Link from "next/link"
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex h-16 items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <img
-              src="/sojfinalelogo.png"
-              alt="Springs of Joy Logo"
-              className="h-14 w-auto ml-4"
-            />
-            <h1 className="text-xl font-bold text-foreground">Springs of Joy</h1>
-          </div>
-          <nav className="hidden md:flex items-center space-x-6">
-            <Link href="/" className="text-foreground hover:text-primary transition-colors">Home</Link>
-            <Link href="/about" className="text-foreground hover:text-primary transition-colors">About Us</Link>
-            <Link href="/services" className="text-foreground hover:text-primary transition-colors">Services</Link>
-            <Link href="/gallery" className="text-foreground hover:text-primary transition-colors">Gallery</Link>
-            <Link href="/contact" className="text-foreground hover:text-primary transition-colors">Contact</Link>
-          </nav>
-          <Button asChild className="hidden md:inline-flex">
-            <Link href="/contact">Schedule a Tour</Link>
-          </Button>
-        </div>
-      </header>
-
       {/* Hero Section */}
       <section className="relative py-20 px-4 bg-gradient-to-b from-card to-background">
         <div className="container mx-auto text-center">
