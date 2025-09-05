@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
 import { Phone, Mail, Sparkles, Heart, Users, Clock, Shield, Star, MapPin } from "lucide-react"
 import Link from "next/link"
 
@@ -10,7 +9,6 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="relative py-20 px-4 bg-gradient-to-b from-card to-background">
         <div className="container mx-auto text-center">
-          <Badge variant="secondary" className="mb-4">Beaverton, Oregon</Badge>
           <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
             Compassionate Care in a<br />
             <span className="text-primary">Home-Like Setting</span>
@@ -29,8 +27,8 @@ export default function HomePage() {
         <div className="mt-16 container mx-auto">
           {/* swapped to your image in /public */}
           <img
-            src="/home-pic.jpg"
-            alt="Front of Springs of Joy Adult Family Home in Beaverton"
+            src="/front-of-house.jpg"
+            alt="Front exterior of Springs of Joy Adult Family Home in Beaverton"
             className="rounded-lg shadow-lg mx-auto w-full max-w-5xl object-cover"
           />
         </div>

@@ -4,10 +4,10 @@ import Link from "next/link"
 
 export default function GalleryPage() {
   const galleryImages = [
-  { src: "/front-of-house.jpg",        alt: "Front exterior of Springs of Joy Adult Family Home in Beaverton", title: "Front of House" },
   { src: "/living-room.jpg",           alt: "Cozy living room with seating and natural light",                 title: "Living Room" },
   { src: "/dining-area.jpg",           alt: "Dining area with table set for residents",                        title: "Dining Area" },
   { src: "/private-bedroom-1.jpg",     alt: "Private resident bedroom with bed and window",                    title: "Private Bedroom" },
+  { src: "/open-room.jpg",     alt: "Open room",                    title: "Open Room" },
   { src: "/private-bedroom-2.jpg",     alt: "Additional private resident bedroom with natural lighting",       title: "Private Bedroom Two" },
   { src: "/accessible-bathroom-1.jpg", alt: "Accessible bathroom with roll-in shower and safety rails",        title: "Accessible Bathroom" },
   { src: "/accessible-bathroom-2.jpg", alt: "Additional accessible bathroom with toilet and safety rails",     title: "Accessible Bathroom Two" },

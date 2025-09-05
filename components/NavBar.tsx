@@ -6,6 +6,7 @@ interface NavbarProps {
 }
 
 export default function Navbar({ currentPage }: NavbarProps) {
+  const burgundy = "#7A1F2B"
   return (
     <header className="sticky top-0 z-50 w-full border-b backdrop-blur supports-[backdrop-filter]:bg-stone-100/60" style={{backgroundColor: '#FDF5E6'}}>
       <div className="container flex h-16 items-center justify-between">
@@ -75,6 +76,8 @@ export default function Navbar({ currentPage }: NavbarProps) {
           <Link href="/contact">Schedule a Tour</Link>
         </Button>
       </div>
+      {/* Top ribbon accent */}
+      <div className="w-full h-1" style={{ backgroundColor: burgundy }} />
     </header>
   )
 }
