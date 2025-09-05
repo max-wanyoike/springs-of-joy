@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Phone, Mail, Broom, HomeIcon, Heart, Users, Clock, Shield, Star } from "lucide-react"
+import { Phone, Mail, Sparkles, HomeIcon, Heart, Users, Clock, Shield, Star, MapPin } from "lucide-react"
 import Link from "next/link"
 
 export default function HomePage() {
@@ -71,7 +71,7 @@ export default function HomePage() {
               { icon: <Shield className="h-8 w-8 text-primary" />, title: "Medication Management", description: "Professional medication administration and monitoring by trained staff." },
               { icon: <Heart className="h-8 w-8 text-primary" />, title: "Nutritious Meals", description: "Home-cooked, nutritious meals prepared with love and dietary considerations." },
               { icon: <Clock className="h-8 w-8 text-primary" />, title: "24/7 Support", description: "Round-the-clock trained staff ensuring safety and peace of mind." },
-              { icon: <Broom className="h-8 w-8 text-primary" />, title: "Housekeeping", description: "Clean, fresh, and comfortable living spaces every day." },
+              { icon: <Sparkles className="h-8 w-8 text-primary" />, title: "Housekeeping", description: "Clean, fresh, and comfortable living spaces every day." },
               { icon: <Star className="h-8 w-8 text-primary" />, title: "Daily Activities", description: "Engaging activities and companionship to enrich daily life." },
             ].map((service, index) => (
               <Card key={index} className="text-center hover:shadow-lg transition-shadow">
