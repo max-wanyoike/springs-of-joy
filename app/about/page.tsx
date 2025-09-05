@@ -10,13 +10,16 @@ export default function HomePage() {
       {/* Header with logo (no text) */}
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 h-20">
         <div className="container flex h-20 items-center justify-between">
-          <Link href="/" className="flex items-center">
-            <img
-              src="/sojfinalelogo.png"
-              alt="Springs of Joy Logo"
-              className="h-14 w-auto ml-4"
-            />
-          </Link>
+          <div>
+            <Link href="/" className="flex items-center">
+              <img
+                src="/sojfinalelogo.png"
+                alt="Springs of Joy Logo"
+                className="h-14 w-auto ml-4"
+              />
+              <h1 className="text-xl font-bold text-foreground">Springs of Joy</h1>
+            </Link>
+          </div>
 
           {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-6">

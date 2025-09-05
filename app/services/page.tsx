@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { HomeIcon, Heart, Users, Shield, Clock, Star, Utensils, Broom } from "lucide-react"
+import { HomeIcon, Heart, Users, Shield, Clock, Star, Utensils, Sparkles, MapPin, Phone, Mail } from "lucide-react"
 import Link from "next/link"
 
 export default function ServicesPage() {
@@ -75,7 +75,7 @@ export default function ServicesPage() {
                 features: ["24-hour availability", "Trained caregivers", "Emergency response", "Continuous monitoring"],
               },
               {
-                icon: <Broom className="h-12 w-12 text-primary" />,
+                icon: <Sparkles className="h-12 w-12 text-primary" />,
                 title: "Housekeeping Services",
                 description:
                   "Comprehensive housekeeping support to maintain a clean, safe, and comfortable living environment. Our staff ensures residents’ surroundings are well cared for so they can enjoy peace of mind.",

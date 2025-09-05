@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Phone, Mail, Sparkles, HomeIcon, Heart, Users, Clock, Shield, Star, MapPin } from "lucide-react"
+import { Phone, Mail, Sparkles, Heart, Users, Clock, Shield, Star, MapPin } from "lucide-react"
 import Link from "next/link"
 
 export default function HomePage() {
@@ -11,8 +11,12 @@ export default function HomePage() {
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center space-x-2">
-            <HomeIcon className="h-8 w-8 text-primary flex-row" />
-            <span className="text-xl font-bold text-foreground">Springs of Joy</span>
+            <img
+              src="/sojfinalelogo.png"
+              alt="Springs of Joy Logo"
+              className="h-14 w-auto ml-4"
+            />
+            <h1 className="text-xl font-bold text-foreground">Springs of Joy</h1>
           </div>
           <nav className="hidden md:flex items-center space-x-6">
             <Link href="/" className="text-foreground hover:text-primary transition-colors">Home</Link>

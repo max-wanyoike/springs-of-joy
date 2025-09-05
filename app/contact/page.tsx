@@ -51,10 +51,16 @@ Message: ${formData.message}
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center space-x-2">
-            <HomeIcon className="h-8 w-8 text-primary" />
-            <Link href="/" className="text-xl font-bold text-foreground">
-              Springs of Joy
-            </Link>
+            <div>
+              <Link href="/" className="flex items-center">
+                <img
+                  src="/sojfinalelogo.png"
+                  alt="Springs of Joy Logo"
+                  className="h-14 w-auto ml-4"
+                />
+                <h1 className="text-xl font-bold text-foreground">Springs of Joy</h1>
+              </Link>
+            </div>
           </div>
           <nav className="hidden md:flex items-center space-x-6">
             <Link href="/" className="text-foreground hover:text-primary transition-colors">
