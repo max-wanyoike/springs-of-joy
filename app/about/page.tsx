@@ -1,159 +1,228 @@
 "use client"
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { Heart, Music, StretchHorizontal, ShieldCheck, Footprints, Spade } from "lucide-react"
-import { motion } from "framer-motion"
+import { Heart, Users, Shield, Home } from "lucide-react"
+import Footer from "@/components/Footer"
 
 // Brand color
 const burgundy = "#7A1F2B"
 
-interface ActivityCardProps {
-  icon: React.ReactNode
-  title: string
-  desc: string
-}
-
-function ActivityCard({ icon, title, desc }: ActivityCardProps) {
-  return (
-    <motion.div 
-      initial={{ opacity: 0, y: 8 }} 
-      whileInView={{ opacity: 1, y: 0 }} 
-      viewport={{ once: true }} 
-      transition={{ duration: 0.35 }}
-    >
-      <Card className="h-full rounded-2xl shadow-sm">
-        <CardHeader className="flex flex-row items-center gap-3 pb-2">
-          <div
-            className="flex h-10 w-10 items-center justify-center rounded-full"
-            style={{ backgroundColor: `${burgundy}15`, color: burgundy }}
-          >
-            {icon}
-          </div>
-          <CardTitle className="text-base" style={{ color: burgundy }}>{title}</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <p className="text-gray-700 leading-relaxed">{desc}</p>
-        </CardContent>
-      </Card>
-    </motion.div>
-  )
-}
-
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-white text-gray-900">
-      {/* Mission & Values */}
-      <section className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pb-6 pt-8">
-        <div className="grid gap-6 lg:grid-cols-3">
-          <Card className="shadow-sm rounded-2xl">
-            <CardHeader>
-              <CardTitle className="text-xl" style={{ color: burgundy }}>Our Mission</CardTitle>
-            </CardHeader>
-            <CardContent className="text-gray-700 leading-relaxed">
-              To support and engage each individual through therapeutic and recreational activities that
-              promote physical and cognitive well‑being—always with dignity, safety, and respect.
-            </CardContent>
-          </Card>
 
-          <Card className="shadow-sm rounded-2xl">
-            <CardHeader>
-              <CardTitle className="text-xl" style={{ color: burgundy }}>Our Approach</CardTitle>
-            </CardHeader>
-            <CardContent className="text-gray-700 leading-relaxed">
-              We personalize routines to each resident's abilities and preferences, coordinate closely with
-              families and healthcare providers, and create moments of connection every day.
-            </CardContent>
-          </Card>
-
-          <Card className="shadow-sm rounded-2xl">
-            <CardHeader>
-              <CardTitle className="text-xl" style={{ color: burgundy }}>What Guides Us</CardTitle>
-            </CardHeader>
-            <CardContent className="flex flex-wrap gap-2">
-              <Badge variant="secondary" className="rounded-full">Safety</Badge>
-              <Badge variant="secondary" className="rounded-full">Respect</Badge>
-              <Badge variant="secondary" className="rounded-full">Independence</Badge>
-              <Badge variant="secondary" className="rounded-full">Joy</Badge>
-              <Badge variant="secondary" className="rounded-full">Consistency</Badge>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
-      {/* Therapeutic & Recreational Activities */}
-      <section className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-8">
-        <div className="mb-6">
-          <h2 className="text-2xl font-semibold" style={{ color: burgundy }}>Therapeutic & Recreational Activities</h2>
-          <p className="mt-2 text-gray-700 max-w-3xl">
-            We support and engage individuals in a variety of activities designed to enhance strength,
-            mobility, cognition, and enjoyment. All activities are adapted to each resident's abilities
-            and performed in accordance with their care plan and physician guidance.
+      {/* Hero Section */}
+      <section className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12">
+        <div className="text-center mb-12">
+          <h1 className="text-4xl font-bold mb-4" style={{ color: burgundy }}>
+            Meet the Hearts Behind Springs of Joy
+          </h1>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Our story begins with a passion for providing exceptional senior care in a warm, 
+            family-like environment where every resident feels valued and loved.
           </p>
         </div>
+      </section>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          <ActivityCard
-            icon={<Heart className="w-6 h-6" />} 
-            title="Sit‑to‑Stand Exercises"
-            desc="Guided movements to build lower‑body strength and support safe transfers and mobility."
-          />
-          <ActivityCard
-            icon={<Music className="w-6 h-6" />} 
-            title="Seated Dance to Music"
-            desc="Rhythm‑based routines that encourage movement, coordination, and joy."
-          />
-          <ActivityCard
-            icon={<Footprints className="w-6 h-6" />} 
-            title="Supported Indoor Walks"
-            desc="Supervised walking for safe activity, confidence, and cardiovascular health."
-          />
-          <ActivityCard
-            icon={<Spade className="w-6 h-6" />} 
-            title="Card & Table Games"
-            desc="Play that stimulates cognition, conversation, and social connection."
-          />
-          <ActivityCard
-            icon={<StretchHorizontal className="w-6 h-6" />} 
-            title="Stretching (Seated or Standing)"
-            desc="Gentle flexibility work to maintain range of motion and encourage relaxation."
-          />
-          <ActivityCard
-            icon={<ShieldCheck className="w-6 h-6" />} 
-            title="Care‑Plan Aligned"
-            desc="Activities follow doctor's orders and are tailored to individual needs and goals."
-          />
+      {/* Founder Story Section */}
+      <section className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-8">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="order-2 lg:order-1">
+            <h2 className="text-3xl font-bold mb-6" style={{ color: burgundy }}>
+              Our Founder's Journey
+            </h2>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              Springs of Joy was founded with a simple yet profound mission: to create a place where 
+              seniors can age with dignity, surrounded by compassionate care and genuine love. Our founder 
+              brings over 15 years of experience in senior care, having witnessed firsthand the difference 
+              that personalized, heartfelt care can make in the lives of our elders.
+            </p>
+            <p className="text-gray-700 leading-relaxed mb-6">
+              After years of working in larger facilities, the vision became clear - seniors deserve 
+              more than just medical care. They deserve a home where their stories are heard, their 
+              preferences are honored, and their golden years are filled with joy and purpose.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <Badge variant="outline" className="border-2" style={{ borderColor: burgundy, color: burgundy }}>
+                Licensed Care Provider
+              </Badge>
+              <Badge variant="outline" className="border-2" style={{ borderColor: burgundy, color: burgundy }}>
+                15+ Years Experience
+              </Badge>
+              <Badge variant="outline" className="border-2" style={{ borderColor: burgundy, color: burgundy }}>
+                Certified in Senior Care
+              </Badge>
+            </div>
+          </div>
+          <div className="order-1 lg:order-2">
+            <div className="relative">
+              <img 
+                src="/api/placeholder/500/600" 
+                alt="Founder of Springs of Joy" 
+                className="rounded-2xl shadow-lg w-full h-[500px] object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl"></div>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Story / Promise */}
-      <section className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-8">
-        <Card className="shadow-sm rounded-2xl border" style={{ borderColor: burgundy }}>
-          <CardContent className="p-6 md:p-8">
-            <p className="text-gray-700 leading-relaxed text-lg">
-              At Springs of Joy, we believe every day should include moments of comfort, accomplishment, and
-              connection. From a successful stretch to a shared laugh over cards, these small wins add up to
-              a life well‑lived—right at home.
+      {/* Care Team Section */}
+      <section className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <div className="relative">
+              <img 
+                src="/api/placeholder/500/600" 
+                alt="Our Care Team" 
+                className="rounded-2xl shadow-lg w-full h-[500px] object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl"></div>
+            </div>
+          </div>
+          <div>
+            <h2 className="text-3xl font-bold mb-6" style={{ color: burgundy }}>
+              Our Dedicated Care Team
+            </h2>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              Every member of our team is carefully selected not just for their professional 
+              qualifications, but for their heart. We believe that the best care comes from 
+              genuine compassion combined with expert knowledge.
             </p>
-          </CardContent>
+            <p className="text-gray-700 leading-relaxed mb-6">
+              Our staff undergoes continuous training in the latest care techniques, safety 
+              protocols, and person-centered care approaches. But most importantly, they share 
+              our commitment to treating every resident like family.
+            </p>
+            
+            <div className="space-y-4">
+              <div className="flex items-start space-x-3">
+                <Heart className="w-6 h-6 mt-1" style={{ color: burgundy }} />
+                <div>
+                  <h4 className="font-semibold" style={{ color: burgundy }}>Compassionate Care</h4>
+                  <p className="text-gray-600">Every interaction is guided by empathy and respect</p>
+                </div>
+              </div>
+              <div className="flex items-start space-x-3">
+                <Shield className="w-6 h-6 mt-1" style={{ color: burgundy }} />
+                <div>
+                  <h4 className="font-semibold" style={{ color: burgundy }}>Professional Excellence</h4>
+                  <p className="text-gray-600">Licensed, trained, and committed to the highest standards</p>
+                </div>
+              </div>
+              <div className="flex items-start space-x-3">
+                <Users className="w-6 h-6 mt-1" style={{ color: burgundy }} />
+                <div>
+                  <h4 className="font-semibold" style={{ color: burgundy }}>Family Approach</h4>
+                  <p className="text-gray-600">We work closely with families to ensure personalized care</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Philosophy Section */}
+      <section className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 className="text-3xl font-bold mb-6" style={{ color: burgundy }}>
+              Our Care Philosophy
+            </h2>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              At Springs of Joy, we believe that aging is not about limitation, but about 
+              adaptation and continued growth. Our approach focuses on maintaining independence 
+              while providing the support needed for safety and comfort.
+            </p>
+            <p className="text-gray-700 leading-relaxed mb-6">
+              We create individualized care plans that honor each resident's preferences, 
+              routines, and life story. From therapeutic activities to daily living assistance, 
+              everything we do is designed to promote dignity, purpose, and joy.
+            </p>
+            
+            <Card className="border-2" style={{ borderColor: burgundy }}>
+              <CardContent className="p-6">
+                <blockquote className="text-lg italic text-gray-700 mb-4">
+                  "Every day should include moments of comfort, accomplishment, and connection. 
+                  These small wins add up to a life well-lived."
+                </blockquote>
+                <cite className="text-sm font-medium" style={{ color: burgundy }}>
+                  — Springs of Joy Care Philosophy
+                </cite>
+              </CardContent>
+            </Card>
+          </div>
+          <div>
+            <div className="relative">
+              <img 
+                src="/api/placeholder/500/600" 
+                alt="Residents enjoying activities" 
+                className="rounded-2xl shadow-lg w-full h-[500px] object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Values Grid */}
+      <section className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold mb-4" style={{ color: burgundy }}>
+            What Guides Everything We Do
+          </h2>
+        </div>
+        
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <Card className="text-center p-6 border-2 hover:shadow-lg transition-shadow" style={{ borderColor: burgundy }}>
+            <Heart className="w-12 h-12 mx-auto mb-4" style={{ color: burgundy }} />
+            <h3 className="font-bold mb-2" style={{ color: burgundy }}>Compassion</h3>
+            <p className="text-gray-600 text-sm">Every action is guided by genuine care and empathy</p>
+          </Card>
+          
+          <Card className="text-center p-6 border-2 hover:shadow-lg transition-shadow" style={{ borderColor: burgundy }}>
+            <Shield className="w-12 h-12 mx-auto mb-4" style={{ color: burgundy }} />
+            <h3 className="font-bold mb-2" style={{ color: burgundy }}>Safety</h3>
+            <p className="text-gray-600 text-sm">Creating a secure environment for peace of mind</p>
+          </Card>
+          
+          <Card className="text-center p-6 border-2 hover:shadow-lg transition-shadow" style={{ borderColor: burgundy }}>
+            <Users className="w-12 h-12 mx-auto mb-4" style={{ color: burgundy }} />
+            <h3 className="font-bold mb-2" style={{ color: burgundy }}>Respect</h3>
+            <p className="text-gray-600 text-sm">Honoring each person's dignity and life story</p>
+          </Card>
+          
+          <Card className="text-center p-6 border-2 hover:shadow-lg transition-shadow" style={{ borderColor: burgundy }}>
+            <Home className="w-12 h-12 mx-auto mb-4" style={{ color: burgundy }} />
+            <h3 className="font-bold mb-2" style={{ color: burgundy }}>Home</h3>
+            <p className="text-gray-600 text-sm">Creating a warm, family-like atmosphere</p>
+          </Card>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12">
+        <Card className="text-center p-8 border-2" style={{ borderColor: burgundy }}>
+          <h3 className="text-2xl font-bold mb-4" style={{ color: burgundy }}>
+            Ready to Meet Our Team?
+          </h3>
+          <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
+            We'd love to welcome you and your family to Springs of Joy. Schedule a personal tour 
+            and see firsthand the warmth and care that makes our home special.
+          </p>
+          <Button 
+            asChild 
+            size="lg" 
+            className="rounded-full px-8 text-white hover:opacity-90 transition-opacity" 
+            style={{ backgroundColor: burgundy }}
+          >
+            <Link href="/contact">Schedule Your Visit Today</Link>
+          </Button>
         </Card>
       </section>
-
-      {/* CTA */}
-      <section className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 rounded-2xl p-6 shadow-sm border" style={{ borderColor: burgundy }}>
-          <div>
-            <h3 className="text-2xl font-semibold" style={{ color: burgundy }}>Come see us in person</h3>
-            <p className="text-gray-700 mt-1">Schedule a tour and we'll tailor a visit to your loved one's interests and needs.</p>
-          </div>
-          <Button asChild size="lg" className="rounded-2xl px-6" style={{ backgroundColor: burgundy }}>
-            <Link href="/contact">Schedule a Tour</Link>
-          </Button>
-        </div>
-      </section>
-      <div className="w-full h-1" style={{ backgroundColor: burgundy }} />
     </div>
   )
 }
