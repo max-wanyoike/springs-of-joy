@@ -153,8 +153,6 @@ export default function AboutPage() {
           </Button>
         </div>
       </section>
-
-      {/* Bottom ribbon accent */}
       <div className="w-full h-1" style={{ backgroundColor: burgundy }} />
     </div>
   )
