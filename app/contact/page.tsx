@@ -238,7 +238,7 @@ Message: ${formData.message}
         </div>
       </section>
 
-      {/* Map Section */}
+      {/* Map Section
       <section className="py-20 px-4 bg-card">
         <div className="container mx-auto">
           <div className="text-center mb-12">
@@ -246,7 +246,7 @@ Message: ${formData.message}
             <p className="text-lg text-muted-foreground">Located in the heart of Beaverton, Oregon</p>
           </div>
 
-          {/* Placeholder for Google Map */}
+          Placeholder for Google Map 
           <div className="bg-muted rounded-lg h-96 flex items-center justify-center">
             <div className="text-center">
               <MapPin className="h-12 w-12 text-primary mx-auto mb-4" />
@@ -257,7 +257,7 @@ Message: ${formData.message}
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
       <section className="py-20 px-4 bg-primary text-primary-foreground">
