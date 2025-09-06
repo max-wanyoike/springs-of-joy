@@ -1,30 +1,32 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { GeistSans } from "geist/font/sans"
-import { GeistMono } from "geist/font/mono"
-import NavBar from '../components/NavBar'
-import Footer from '../components/Footer'
-import "./globals.css"
+import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
+import './globals.css'
+import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
+
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: "Springs of Joy Care Home | Compassionate Senior Care in Beaverton, Oregon",
-  description:
-    "Springs of Joy provides dignified, compassionate senior care and assisted living in a warm, home-like environment in Beaverton, Oregon. 24/7 support, personalized care, and activities.",
-  keywords:
-    "Care Home Beaverton Oregon, Assisted Living Beaverton, Senior Care Beaverton, Springs of Joy Beaverton",
-  generator: "v0.app",
+  title: 'Springs of Joy Adult Family Home',
+  description: 'Providing compassionate senior care in Beaverton, Oregon',
 }
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode
-}>) {
+}) {
   return (
     <html lang="en">
-      <NavBar />
-      <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>{children}</body>
-      <Footer />
+      <body className={inter.className}>
+        <div className="min-h-screen flex flex-col">
+          <Navbar />
+          <main className="flex-1">
+            {children}
+          </main>
+          <Footer />
+        </div>
+      </body>
     </html>
   )
 }
